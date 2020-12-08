@@ -69,6 +69,7 @@ public class LeadDataHelper {
         leads = new ArrayList<Lead>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(LEADS_RECORDS_FILE));
+            br.readLine(); // Skip the first line (Titles)
             String line;
             while ((line = br.readLine()) != null) {
                 Lead lead = rowToLead(line);
